@@ -5,9 +5,12 @@ const STORAGE_KEY_KEY = 'supabase_devpulse_key';
 
 let customClient: SupabaseClient | null = null;
 
+const DEFAULT_URL = import.meta.env.VITE_SUPABASE_URL || '';
+const DEFAULT_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+
 export const getStoredSupabaseConfig = () => {
-  const url = localStorage.getItem(STORAGE_KEY_URL) || '';
-  const anonKey = localStorage.getItem(STORAGE_KEY_KEY) || '';
+  const url = localStorage.getItem(STORAGE_KEY_URL) || DEFAULT_URL;
+  const anonKey = localStorage.getItem(STORAGE_KEY_KEY) || DEFAULT_KEY;
   return { url, anonKey, isConnected: Boolean(url && anonKey) };
 };
 
