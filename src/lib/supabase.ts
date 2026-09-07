@@ -5,8 +5,8 @@ const STORAGE_KEY_KEY = 'supabase_devpulse_key';
 
 let customClient: SupabaseClient | null = null;
 
-const DEFAULT_URL = import.meta.env.VITE_SUPABASE_URL || '';
-const DEFAULT_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+const DEFAULT_URL = import.meta.env.VITE_SUPABASE_URL || 'https://jjmezlzxainyswrugxoo.supabase.co';
+const DEFAULT_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqbWV6bHp4YWlueXN3cnVneG9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3Mjk1NTAsImV4cCI6MjEwNDMwNTU1MH0.hrZBMiNbOlWG6e5VQPAnlNTrQsPHdui24XnPK5cd3vg';
 
 export const getStoredSupabaseConfig = () => {
   const url = localStorage.getItem(STORAGE_KEY_URL) || DEFAULT_URL;
